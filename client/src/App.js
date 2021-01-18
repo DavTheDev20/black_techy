@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import './App.css';
 
 const App = () => {
   const [post, setPost] = useState({
@@ -81,43 +82,56 @@ const App = () => {
       .catch(() => console.log('Internal server error'));
   }
 
+  const date = new Date();
+  const currentYear = date.getFullYear();
+
 
   return (
     <div className="app">
-      <div className="header">
-        <h1>Black And Techy</h1>
+      <div className="wrapper">
+        <div className="header">
+          <h1>Black And Techy</h1>
+          <img
+            src="https://lh3.googleusercontent.com/proxy/IFkwE7YIKqSrzzFkyhe38wDmG49wCJPDJVuAJdcOwnkQLwuH6RZmoA57n_goUyGdaznZlUjGxj8IX58wXYWL9m0FaTAYYDxysg7RGs4G85UXvjgYvZt5p8LeAiviHzwe1HfwH9yzmnDnsmDhSso8HF_vqJHjJYzuWV8"
+            alt="Black Power Fist"
+          />
+        </div>
+        <form onSubmit={submit}>
+          <h2>Create Post</h2>
+          <input
+            type="text"
+            name="title"
+            placeholder="Title"
+            autoComplete="off"
+            onChange={handleChange}
+            value={post.title}
+          />
+          <br />
+          <textarea
+            name="content"
+            placeholder="content"
+            rows={7}
+            onChange={handleChange}
+            value={post.content}
+          />
+          <br />
+          <button className="submit-button">Submit Post</button>
+        </form>
+        <hr />
+        <div className="posts">
+          {postsArr.map((post, index) => {
+            return (
+              <div className="post" key={post._id}>
+                <h3>{post.title}</h3>
+                <p>{post.content}</p>
+                <button className="delete-button" value={post._id} onClick={deletePost}>Delete Post</button>
+              </div>
+            );
+          })}
+        </div>
+        <div className="push"></div>
       </div>
-      <form onSubmit={submit}>
-        <input
-          type="text"
-          name="title"
-          placeholder="Title"
-          autoComplete="off"
-          onChange={handleChange}
-          value={post.title}
-        />
-        <br />
-        <textarea
-          name="content"
-          placeholder="content"
-          rows={7}
-          onChange={handleChange}
-          value={post.content}
-        />
-        <br />
-        <button>Submit Post</button>
-      </form>
-      <div className="posts">
-        {postsArr.map((post, index) => {
-          return (
-            <div key={post._id}>
-              <h3>{post.title}</h3>
-              <p>{post.content}</p>
-              <button value={post._id} onClick={deletePost}>Delete Post</button>
-            </div>
-          );
-        })}
-      </div>
+      <footer>© Davin Reid {currentYear}</footer>
     </div>
   )
 }
