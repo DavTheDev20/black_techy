@@ -11,7 +11,7 @@ const App = () => {
   const [postsArr, setPostsArr] = useState([]);
 
   const getPosts = () => {
-    axios.get('http://localhost:8080/api')
+    axios.get('https://blackandtechy.herokuapp.com/api')
       .then((res) => {
         setPostsArr(res.data);
       })
@@ -46,7 +46,7 @@ const App = () => {
     event.preventDefault();
 
     axios({
-      url: 'http://localhost:8080/api/save',
+      url: 'https://blackandtechy.herokuapp.com/api/save',
       method: 'POST',
       data: {
         title: post.title,
@@ -69,7 +69,7 @@ const App = () => {
   const deletePost = ({ target }) => {
     const { value } = target;
     axios({
-      url: 'http://localhost:8080/api/delete',
+      url: 'https://blackandtechy.herokuapp.com/api/delete',
       method: 'DELETE',
       data: {
         _id: value
