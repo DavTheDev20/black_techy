@@ -30,7 +30,7 @@ app.use('/api', router);
 
 //Step three in heroku deployment
 if (process.env.NODE_ENV === 'production') {
-    app.use(express.static('client/build/index.html'));
+    app.use(express.static('client/build/'));
 }
 
 app.listen(port, () => console.log(`Server runnning on port: ${port}`));
