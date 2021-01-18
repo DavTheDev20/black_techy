@@ -1,0 +1,23 @@
+{
+  "name": "black_techy",
+  "version": "1.0.0",
+  "description": "This is a blog site for minority developers",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "blog"
+  ],
+  "author": "Davin Reid",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "concurrently": "^5.3.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.11.12",
+    "morgan": "^1.10.0"
+  }
+}
