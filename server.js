@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express');
 const mongoose = require('mongoose');
 const morgan = require('morgan');
@@ -10,8 +11,10 @@ const app = express();
 //Step one in heroku deployment
 const port = process.env.PORT || 8080;
 
+const password = process.env.ATLAS_PASS;
+
 //Step two in heroku deployment
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/black_techyDB', {
+mongoose.connect(`mongodb+srv://admin-davin:${password}@cluster0.ol1ih.mongodb.net/black_techyDB?retryWrites=true&w=majority`, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
@@ -30,7 +33,7 @@ app.use('/api', router);
 
 //Step three in heroku deployment
 if (process.env.NODE_ENV === 'production') {
-    app.use(express.static('client/build/'));
+    app.use(express.static('client/build'));
 }
 
 app.listen(port, () => console.log(`Server runnning on port: ${port}`));
