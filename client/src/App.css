@@ -33,13 +33,29 @@ footer,
 
 form {
   width: 10%;
-  text-align: center;
   margin: 10px;
 }
 
 input {
   padding: 2%;
   margin-bottom: 0.35rem;
+  border-radius: 0.35rem;
+  border: none;
+}
+
+textarea {
+  border: none;
+  border-radius: 0.35rem;
+}
+
+input:focus {
+  background-color: #121013;
+  color: #ffe227;
+}
+
+textarea:focus {
+  background-color: #121013;
+  color: #ffe227;
 }
 
 hr {
@@ -102,4 +118,46 @@ footer {
 
 .delete-button:hover {
   background-color: rgb(255, 85, 85);
+}
+
+.posts-heading {
+  margin: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+  img {
+    width: 5rem;
+    top: 10px;
+  }
+
+  h2 {
+    font-size: 2rem;
+    width: 200px;
+  }
+
+  input {
+    padding: 25%;
+    font-size: 1.25rem;
+  }
+
+  .content-section {
+    font-size: 1.25rem;
+    height: 150px;
+  }
+
+  .submit-button {
+    width: 185px;
+    height: 55px;
+    font-size: 1.25rem;
+  }
+
+  hr {
+    width: 325px;
+    margin-left: 170px;
+    text-align: center;
+  }
+
+  .post {
+    width: 300px;
+  }
 }

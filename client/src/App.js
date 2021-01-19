@@ -108,15 +108,18 @@ const App = () => {
           />
           <br />
           <textarea
+            className="content-section"
             name="content"
             placeholder="content"
-            rows={7}
+            rows={10}
+            cols={30}
             onChange={handleChange}
             value={post.content}
           />
           <br />
           <button className="submit-button">Submit Post</button>
         </form>
+        <h2 className="posts-heading">Posts</h2>
         <hr />
         <div className="posts">
           {postsArr.map((post, index) => {
