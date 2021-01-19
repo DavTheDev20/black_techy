@@ -92,7 +92,7 @@ const App = () => {
         <div className="header">
           <h1>Black And Techy</h1>
           <img
-            src="blkpower.png"
+            src="/images/blkpower.png"
             alt="Black Power Fist"
           />
         </div>
