@@ -92,7 +92,7 @@ const App = () => {
         <div className="header">
           <h1>Black And Techy</h1>
           <img
-            src="https://lh3.googleusercontent.com/proxy/IFkwE7YIKqSrzzFkyhe38wDmG49wCJPDJVuAJdcOwnkQLwuH6RZmoA57n_goUyGdaznZlUjGxj8IX58wXYWL9m0FaTAYYDxysg7RGs4G85UXvjgYvZt5p8LeAiviHzwe1HfwH9yzmnDnsmDhSso8HF_vqJHjJYzuWV8"
+            src="blkpower.png"
             alt="Black Power Fist"
           />
         </div>
