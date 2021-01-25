@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import CircularProgress from '@material-ui/core/CircularProgress';
 import './App.css';
 
 const App = () => {
@@ -9,13 +10,28 @@ const App = () => {
   });
 
   const [postsArr, setPostsArr] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
-  const getPosts = () => {
-    axios.get('https://blackandtechy.herokuapp.com/api')
-      .then((res) => {
-        setPostsArr(res.data);
-      })
-      .catch(() => alert('Error recieving posts'));
+  // const getPosts = async () => {
+  //   await axios.get('https://blackandtechy.herokuapp.com/api')
+  //     .then((res) => {
+  //       setPostsArr(res.data);
+  //       setIsLoading(true)
+  //     })
+  //     .catch(() => alert('Error recieving posts'));
+  // }
+
+  const getPosts = async () => {
+    try {
+      await axios
+        .get('https://blackandtechy.herokuapp.com/api')
+        .then(res => {
+          setPostsArr(res.data);
+        })
+      setIsLoading(true);
+    } catch {
+      alert('Error recieving posts');
+    }
   }
 
   useEffect(() => {
@@ -121,6 +137,9 @@ const App = () => {
         </form>
         <h2 className="posts-heading">Posts</h2>
         <hr />
+        <div style={{ visibility: isLoading ? "hidden" : "visable", position: "absolute", marginLeft: "25px" }}>
+          <CircularProgress />
+        </div>
         <div className="posts">
           {postsArr.map((post, index) => {
             return (

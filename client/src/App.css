@@ -106,14 +106,20 @@ footer {
   width: 30%;
   padding-left: 10px;
   padding-bottom: 10px;
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.692);
+  border-radius: 10px;
+  margin: 10px 0;
+  font-weight: 500;
 }
 
 .delete-button {
   background-color: rgb(255, 24, 24);
   color: white;
   cursor: pointer;
-  padding: 7px;
+  padding: 8px;
   border-radius: 0.75rem;
+  font-size: 0.85rem;
+  border: none;
 }
 
 .delete-button:hover {
