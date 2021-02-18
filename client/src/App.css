@@ -2,7 +2,7 @@ html {
   background-color: #ffe227;
   padding: 0;
   color: #121013;
-  font-family: 'Noto Sans', sans-serif;
+  font-family: "Noto Sans", sans-serif;
 }
 
 html,
@@ -28,7 +28,7 @@ footer,
   padding-left: 10px;
   padding: 1.5%;
   border-bottom: 2px solid #121013;
-  font-family: 'Noto Sans JP', sans-serif;
+  font-family: "Noto Sans JP", sans-serif;
 }
 
 form {
@@ -171,7 +171,7 @@ footer {
   }
 
   .post p {
-    line-height: 1.25;
-    width: 80%;
+    line-height: 1.4;
+    width: 93%;
   }
 }
