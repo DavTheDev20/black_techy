@@ -1,4 +1,4 @@
-# Black and Techy Website 👩🏾‍💻
+# Black and Techy Website 👨🏾‍💻
 
 ### This is a website where minorities can talk about all things tech!
 
